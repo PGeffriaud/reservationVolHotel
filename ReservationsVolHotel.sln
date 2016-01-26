@@ -7,6 +7,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "WEB", "WEB", "{4D04D46A-817
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Webapp", "Webapp\Webapp.csproj", "{743CB592-D8BA-4737-816F-9755EC82A37D}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DB", "DB", "{791D5099-5BB6-4EC3-8A8F-09DF235E27C5}"
+EndProject
+Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "Databases", "Databases\Databases.sqlproj", "{2A9911AE-5A4E-431E-A5B6-A4947539FC5F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -17,11 +21,18 @@ Global
 		{743CB592-D8BA-4737-816F-9755EC82A37D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{743CB592-D8BA-4737-816F-9755EC82A37D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{743CB592-D8BA-4737-816F-9755EC82A37D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2A9911AE-5A4E-431E-A5B6-A4947539FC5F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2A9911AE-5A4E-431E-A5B6-A4947539FC5F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2A9911AE-5A4E-431E-A5B6-A4947539FC5F}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{2A9911AE-5A4E-431E-A5B6-A4947539FC5F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2A9911AE-5A4E-431E-A5B6-A4947539FC5F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2A9911AE-5A4E-431E-A5B6-A4947539FC5F}.Release|Any CPU.Deploy.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{743CB592-D8BA-4737-816F-9755EC82A37D} = {4D04D46A-8174-4E81-9BC9-F06FBE78684A}
+		{2A9911AE-5A4E-431E-A5B6-A4947539FC5F} = {791D5099-5BB6-4EC3-8A8F-09DF235E27C5}
 	EndGlobalSection
 EndGlobal
