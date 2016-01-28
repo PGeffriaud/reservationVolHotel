@@ -1,5 +1,8 @@
 ﻿using System;
 using System.Data;
+using System.Collections.Generic;
+using booking.libGetFlights;
+using booking.libGetHotels;
 
 namespace Webapp
 {
@@ -7,12 +10,23 @@ namespace Webapp
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            
+            // Génération liste des vols
+            libGetFlights libFlights = new libGetFlights();
+            List<Flight> flights = libFlights.getAvailableFlights();
+            tableFlights.DataSource = flights;
+            tableFlights.DataBind();
+
+            // Génération liste des hôtels
+            libGetHotels libHotels = new libGetHotels();
+            List<Hotel> hotels = libHotels.getAvailableHotels();
+            tableHotels.DataSource = hotels;
+            tableHotels.DataBind();
+
         }
 
         protected void btnSubmit_Click(object sender, EventArgs e)
         {
-            labelResult.Text = "Bienvenue " + txtFirstName.Text + " " + txtName.Text;
+            labelResult.Text = "Félicitations: "+txtName.Text+" -- Réservation effectuée !";
         }
     }
 }

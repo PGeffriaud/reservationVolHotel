@@ -13,22 +13,40 @@ namespace Webapp {
     public partial class Default {
         
         /// <summary>
-        /// Contrôle form1.
+        /// Contrôle formResa.
         /// </summary>
         /// <remarks>
         /// Champ généré automatiquement.
         /// Pour modifier, déplacez la déclaration de champ du fichier de concepteur dans le fichier code-behind.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlForm form1;
+        protected global::System.Web.UI.HtmlControls.HtmlForm formResa;
         
         /// <summary>
-        /// Contrôle txtFirstName.
+        /// Contrôle labelResult.
         /// </summary>
         /// <remarks>
         /// Champ généré automatiquement.
         /// Pour modifier, déplacez la déclaration de champ du fichier de concepteur dans le fichier code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtFirstName;
+        protected global::System.Web.UI.WebControls.Label labelResult;
+        
+        /// <summary>
+        /// Contrôle tableFlights.
+        /// </summary>
+        /// <remarks>
+        /// Champ généré automatiquement.
+        /// Pour modifier, déplacez la déclaration de champ du fichier de concepteur dans le fichier code-behind.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.GridView tableFlights;
+        
+        /// <summary>
+        /// Contrôle tableHotels.
+        /// </summary>
+        /// <remarks>
+        /// Champ généré automatiquement.
+        /// Pour modifier, déplacez la déclaration de champ du fichier de concepteur dans le fichier code-behind.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.GridView tableHotels;
         
         /// <summary>
         /// Contrôle txtName.
@@ -40,6 +58,15 @@ namespace Webapp {
         protected global::System.Web.UI.WebControls.TextBox txtName;
         
         /// <summary>
+        /// Contrôle txtTel.
+        /// </summary>
+        /// <remarks>
+        /// Champ généré automatiquement.
+        /// Pour modifier, déplacez la déclaration de champ du fichier de concepteur dans le fichier code-behind.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtTel;
+        
+        /// <summary>
         /// Contrôle btnSubmit.
         /// </summary>
         /// <remarks>
@@ -47,14 +74,5 @@ namespace Webapp {
         /// Pour modifier, déplacez la déclaration de champ du fichier de concepteur dans le fichier code-behind.
         /// </remarks>
         protected global::System.Web.UI.WebControls.LinkButton btnSubmit;
-        
-        /// <summary>
-        /// Contrôle labelResult.
-        /// </summary>
-        /// <remarks>
-        /// Champ généré automatiquement.
-        /// Pour modifier, déplacez la déclaration de champ du fichier de concepteur dans le fichier code-behind.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label labelResult;
     }
 }

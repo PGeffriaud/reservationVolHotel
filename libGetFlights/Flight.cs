@@ -4,14 +4,14 @@ namespace booking.libGetFlights
 {
     public class Flight
     {
-        public int id;
-        public string numPlane;
-        public DateTime dateStart;
-        public DateTime dateEnd;
-        public string cityFrom;
-        public string cityTo;
-        public string cityFromCode;
-        public string cityToCode;
+        public int id { get; set; }
+        public string numPlane { get; set; }
+        public DateTime dateStart { get; set; }
+        public DateTime dateEnd { get; set; }
+        public string cityFrom { get; set; }
+        public string cityTo { get; set; }
+        public string cityFromCode { get; set; }
+        public string cityToCode { get; set; }
 
         public Flight(int id, string numPlane, DateTime dateStart, DateTime dateEnd, string cityFrom, string cityTo, string cityFromCode, string cityToCode)
         {

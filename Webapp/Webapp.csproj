@@ -82,7 +82,19 @@
       <DependentUpon>Web.config</DependentUpon>
     </None>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\libGetFlights\libGetFlights.csproj">
+      <Project>{437ba3ae-a41d-4d0e-b678-9db5cde1504e}</Project>
+      <Name>libGetFlights</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\libGetHotels\libGetHotels.csproj">
+      <Project>{88609ac2-106f-4a03-9e05-f904120b737e}</Project>
+      <Name>libGetHotels</Name>
+    </ProjectReference>
+  </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>

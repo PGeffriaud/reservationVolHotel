@@ -2,11 +2,11 @@
 {
     public class Hotel
     {
-        public int id;
-        public string name;
-        public string city;
-        public string adress;
-        public int price;
+        public int id { get; set; }
+        public string name { get; set; }
+        public string city { get; set; }
+        public string adress { get; set; }
+        public int price { get; set; }
 
         public Hotel(int id, string name, string city, string adress, int price)
         {
