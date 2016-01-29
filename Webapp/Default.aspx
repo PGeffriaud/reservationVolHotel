@@ -6,6 +6,7 @@
 <head runat="server">
     <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
     <link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
+    <link type="text/css" rel="stylesheet" href="css/style.css" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
     <script type="text/javascript" src="js/materialize.min.js"></script>
@@ -16,20 +17,35 @@
     <div class="row">
     <form id="formResa" runat="server" class="col s12">
 
-        <div class="row col s6 offset-s3">
-            <h2>Welcome to our webApp !</h2>
+        <div class="row col s8 offset-s2">
+            <h2>Welcome to our booking webApp !</h2>
         </div>
            
         <div class="row col s12 card-panel teal lighten-2">
             <asp:Label ID="labelResult" runat="server" Text=""></asp:Label>
         </div>
-        <div class="row col s12">
-            <asp:GridView ID="tableFlights" runat="server">
-            </asp:GridView>
-        </div>
-        <div class="row col s12">
-            <asp:GridView ID="tableHotels" runat="server">
-            </asp:GridView>
+        <div class="row">
+            <div class="col s6">
+                <asp:GridView ID="tableFlights" runat="server" CssClass="center-align highlight" HeaderStyle-BackColor="#bdbdbd" AutoGenerateColumns="false">
+                    <Columns>
+                        <asp:BoundField DataField="numPlane" HeaderText="Vol Numéro"  />
+                        <asp:BoundField DataField="dateStart" HeaderText="Date départ"  />
+                        <asp:BoundField DataField="dateEnd" HeaderText="Date arrivée"  />
+                        <asp:BoundField DataField="cityFrom" HeaderText="Ville départ"  />
+                        <asp:BoundField DataField="cityTo" HeaderText="Ville arrivée"  />
+                    </Columns>
+                </asp:GridView>
+            </div>
+            <div class="col s6">
+                <asp:GridView ID="tableHotels" runat="server" CssClass="center-align highlight" HeaderStyle-BackColor="#bdbdbd" AutoGenerateColumns="false">
+                    <Columns>
+                        <asp:BoundField DataField="name" HeaderText="Nom"  />
+                        <asp:BoundField DataField="city" HeaderText="Ville"  />
+                        <asp:BoundField DataField="adress" HeaderText="Adresse"  />
+                        <asp:BoundField DataField="price" HeaderText="Prix"  />
+                    </Columns>
+                </asp:GridView>
+            </div>
         </div>
         <div class="row col s2 offset-s5">
              <button data-target="modalCoord" class="btn modal-trigger">Réserver</button>

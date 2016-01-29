@@ -59,6 +59,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="css\materialize.min.css" />
+    <Content Include="css\style.css" />
     <Content Include="Default.aspx" />
     <Content Include="js\materialize.min.js" />
     <Content Include="js\script.js" />
