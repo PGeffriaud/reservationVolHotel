@@ -32,7 +32,7 @@ namespace Webapp
 
         protected void btnSubmit_Click(object sender, EventArgs e)
         {
-            // Récupération de l'objet Reservation
+            // Création de l'objet Reservation
             Reservation resa = new Reservation();
             resa.idClient = Guid.NewGuid().ToString();
 
@@ -41,14 +41,16 @@ namespace Webapp
 
             Hotel selectedHotel = hotels[tableHotels.SelectedIndex];
             resa.idHotel = selectedHotel.id;
-            
-            
+
+            resa.hotelDateFrom = Convert.ToDateTime(dateFrom.Text);
+            resa.hotelDateTo = Convert.ToDateTime(dateTo.Text);
+
             // Ecriture dans la file
             MessageQueue mq = new MessageQueue(@".\private$\bookingemn");
             mq.Send(resa, "resa" + resa.idClient);
             mq.Close();
 
-            //labelResult.Text = "Félicitations: "+txtName.Text+" -- Réservation effectuée !";
+            labelResult.Text = "Réservation enregistrée";
         }
 
         protected void tableFlights_GridViewRowEventHandler(Object sender, GridViewRowEventArgs e)
@@ -62,27 +64,17 @@ namespace Webapp
             }
         }
 
-        protected void tableFlights_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            string name = tableFlights.SelectedRow.Cells[0].Text;
-            labelResult.Text = "Ligne sélectionnée: " + name;
-        }
-
         protected void tableHotels_GridViewRowEventHandler(Object sender, GridViewRowEventArgs e)
         {
             if (e.Row.RowType == DataControlRowType.DataRow)
             {
-                e.Row.Attributes["onmouseover"] = "this.style.cursor='pointer';this.style.textDecoration='underline';";
-                e.Row.Attributes["onmouseout"] = "this.style.textDecoration='none';";
-                e.Row.ToolTip = "Click to select row";
+                //e.Row.Attributes["onmouseover"] = "this.style.cursor='pointer';this.style.textDecoration='underline';";
+                e.Row.Attributes["onmouseover"] = "this.style.cursor='pointer';";
+                //e.Row.Attributes["onmouseout"] = "this.style.textDecoration='none';";
+                //e.Row.ToolTip = "Click to select row";
                 e.Row.Attributes["onclick"] = this.Page.ClientScript.GetPostBackClientHyperlink(this.tableHotels, "Select$" + e.Row.RowIndex);
             }
         }
 
-        protected void tableHotels_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            string name = tableHotels.SelectedRow.Cells[0].Text;
-            labelResult.Text = "Ligne sélectionnée: " + name;
-        }
     }
 }

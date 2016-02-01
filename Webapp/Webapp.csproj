@@ -62,6 +62,7 @@
     <Content Include="css\materialize.min.css" />
     <Content Include="css\style.css" />
     <Content Include="Default.aspx" />
+    <Content Include="js\jquery-2.2.0.min.js" />
     <Content Include="js\materialize.min.js" />
     <Content Include="js\script.js" />
     <Content Include="Web.config" />
