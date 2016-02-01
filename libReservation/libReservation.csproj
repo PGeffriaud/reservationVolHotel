@@ -54,6 +54,16 @@
   <ItemGroup>
     <None Include="keyLibReservation.snk" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\libBookFlights\libBookFlights.csproj">
+      <Project>{378eaae9-1ff1-45e1-b943-e29662947f78}</Project>
+      <Name>libBookFlights</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\libBookHotels\libBookHotels.csproj">
+      <Project>{8cd2715c-fbd0-4590-81ef-f5220def98c7}</Project>
+      <Name>libBookHotels</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
