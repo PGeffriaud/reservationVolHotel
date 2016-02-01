@@ -10,7 +10,7 @@ using libBookFlights.Properties;
 namespace booking.libBookFlights
 {
     [Transaction(TransactionOption.Required), ObjectPooling(5, 10), Description("Booking EMN")]
-    public class libBookFlights
+    public class libBookFlights : ServicedComponent
     {
         /// <summary>
         /// Ajoute une réservation d'un vol
