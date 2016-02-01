@@ -9,7 +9,11 @@ namespace Webapp
 {
     public class Reservation
     {
-        public Flight flight { get; set; }
-        public Hotel hotel { get; set; }
+        public string idClient { get; set; }
+        public int idFlight { get; set; }
+        public int idHotel { get; set; }
+        public DateTime hotelDateFrom { get; set; }
+        public DateTime hotelDateTo { get; set; }
+
     }
 }

@@ -25,7 +25,7 @@ namespace libBookFlights.Properties {
         
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("YANNDOTNET-PC")]
+        [global::System.Configuration.DefaultSettingValueAttribute("PIERREG-PC")]
         public string host {
             get {
                 return ((string)(this["host"]));

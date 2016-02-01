@@ -30,6 +30,7 @@
             <div class="col s6">
                 <asp:GridView ID="tableFlights" runat="server" CssClass="center-align highlight" HeaderStyle-BackColor="#bdbdbd" OnRowDataBound="tableFlights_GridViewRowEventHandler" AutoGenerateColumns="false" OnSelectedIndexChanged="tableFlights_SelectedIndexChanged">
                     <Columns> 
+                        <asp:BoundField DataField="id" HeaderText="Id"  />
                         <asp:BoundField DataField="numPlane" HeaderText="Numéro"  />
                         <asp:BoundField DataField="dateStart" HeaderText="Date départ"  />
                         <asp:BoundField DataField="dateEnd" HeaderText="Date arrivée"  />
@@ -43,6 +44,7 @@
             <div class="col s6">
                 <asp:GridView ID="tableHotels" runat="server" CssClass="center-align highlight" HeaderStyle-BackColor="#bdbdbd" OnRowDataBound="tableHotels_GridViewRowEventHandler" AutoGenerateColumns="false" OnSelectedIndexChanged="tableHotels_SelectedIndexChanged">
                     <Columns>
+                        <asp:BoundField DataField="id" HeaderText="Id"  />
                         <asp:BoundField DataField="name" HeaderText="Nom"  />
                         <asp:BoundField DataField="city" HeaderText="Ville"  />
                         <asp:BoundField DataField="adress" HeaderText="Adresse"  />
