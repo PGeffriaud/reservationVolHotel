@@ -13,6 +13,10 @@ namespace booking.libGetFlights
         public string cityFromCode { get; set; }
         public string cityToCode { get; set; }
 
+        public Flight()
+        {
+        }
+
         public Flight(int id, string numPlane, DateTime dateStart, DateTime dateEnd, string cityFrom, string cityTo, string cityFromCode, string cityToCode)
         {
             this.id = id;
