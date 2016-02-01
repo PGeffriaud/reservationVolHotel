@@ -59,7 +59,7 @@
     <Folder Include="Properties" />
   </ItemGroup>
   <ItemGroup>
-    <Build Include="scriptBNBHOTEL.sql" />
-    <Build Include="scriptAIRFLIGHT.sql" />
+    <None Include="scriptBNBHOTEL.sql" />
+    <None Include="scriptAIRFLIGHT.sql" />
   </ItemGroup>
 </Project>
