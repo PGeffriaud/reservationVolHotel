@@ -57,9 +57,7 @@ namespace Webapp
         {
             if (e.Row.RowType == DataControlRowType.DataRow)
             {
-                e.Row.Attributes["onmouseover"] = "this.style.cursor='pointer';this.style.textDecoration='underline';";
-                e.Row.Attributes["onmouseout"] = "this.style.textDecoration='none';";
-                e.Row.ToolTip = "Click to select row";
+                e.Row.Attributes["onmouseover"] = "this.style.cursor='pointer';";
                 e.Row.Attributes["onclick"] = this.Page.ClientScript.GetPostBackClientHyperlink(this.tableFlights, "Select$" + e.Row.RowIndex);
             }
         }
@@ -68,10 +66,7 @@ namespace Webapp
         {
             if (e.Row.RowType == DataControlRowType.DataRow)
             {
-                //e.Row.Attributes["onmouseover"] = "this.style.cursor='pointer';this.style.textDecoration='underline';";
                 e.Row.Attributes["onmouseover"] = "this.style.cursor='pointer';";
-                //e.Row.Attributes["onmouseout"] = "this.style.textDecoration='none';";
-                //e.Row.ToolTip = "Click to select row";
                 e.Row.Attributes["onclick"] = this.Page.ClientScript.GetPostBackClientHyperlink(this.tableHotels, "Select$" + e.Row.RowIndex);
             }
         }
