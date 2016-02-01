@@ -83,5 +83,16 @@ namespace MSMQtool
             }
             mq.Close();
         }
+
+        private void buttonReceiveOne_Click(object sender, EventArgs e)
+        {
+            MessageQueue mq = getMessageQueue();
+
+            System.Messaging.Message mess = mq.Peek();
+            Reservation res = (Reservation)mess.Body;
+            libReservation.reservation(res.idClient, res.idFlight, res.idHotel, res.hotelDateFrom, res.hotelDateTo);
+            mq.Receive();
+            mq.Close();
+        }
     }
 }

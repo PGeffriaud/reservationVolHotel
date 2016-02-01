@@ -42,6 +42,7 @@
             this.buttonReceiveOne.TabIndex = 0;
             this.buttonReceiveOne.Text = "Receive One";
             this.buttonReceiveOne.UseVisualStyleBackColor = true;
+            this.buttonReceiveOne.Click += new System.EventHandler(this.buttonReceiveOne_Click);
             // 
             // buttonReceiveAll
             // 
