@@ -6,6 +6,7 @@ using booking.libGetInfos;
 using booking.libGetFlights;
 using booking.libGetHotels;
 using System.Web.UI.WebControls;
+using booking.Reservation;
 
 namespace Webapp
 {

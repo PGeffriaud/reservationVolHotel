@@ -76,7 +76,6 @@
       <DependentUpon>Default.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Reservation.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Web.Debug.config">
@@ -101,6 +100,10 @@
     <ProjectReference Include="..\libGetInfos\libGetInfos.csproj">
       <Project>{369a714f-1716-4203-bdc2-59a05afc1b50}</Project>
       <Name>libGetInfos</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\sharedTypes\sharedTypes.csproj">
+      <Project>{bff20417-874e-47ba-8ffe-2ff9980c8c7a}</Project>
+      <Name>sharedTypes</Name>
     </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
