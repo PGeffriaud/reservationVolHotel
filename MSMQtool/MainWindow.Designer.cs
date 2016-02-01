@@ -51,13 +51,14 @@
             this.buttonReceiveAll.TabIndex = 1;
             this.buttonReceiveAll.Text = "Receive All";
             this.buttonReceiveAll.UseVisualStyleBackColor = true;
+            this.buttonReceiveAll.Click += new System.EventHandler(this.buttonReceiveAll_Click);
             // 
             // itemsList
             // 
             this.itemsList.FormattingEnabled = true;
             this.itemsList.Location = new System.Drawing.Point(12, 12);
             this.itemsList.Name = "itemsList";
-            this.itemsList.Size = new System.Drawing.Size(260, 199);
+            this.itemsList.Size = new System.Drawing.Size(662, 199);
             this.itemsList.TabIndex = 2;
             // 
             // buttonClearAll
@@ -68,12 +69,13 @@
             this.buttonClearAll.TabIndex = 3;
             this.buttonClearAll.Text = "Clear All";
             this.buttonClearAll.UseVisualStyleBackColor = true;
+            this.buttonClearAll.Click += new System.EventHandler(this.buttonClearAll_Click);
             // 
             // MainWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(284, 262);
+            this.ClientSize = new System.Drawing.Size(686, 262);
             this.Controls.Add(this.buttonClearAll);
             this.Controls.Add(this.itemsList);
             this.Controls.Add(this.buttonReceiveAll);

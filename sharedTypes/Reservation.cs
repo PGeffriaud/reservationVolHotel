@@ -12,6 +12,5 @@ namespace booking.Reservation
         public int idHotel { get; set; }
         public DateTime hotelDateFrom { get; set; }
         public DateTime hotelDateTo { get; set; }
-
     }
 }

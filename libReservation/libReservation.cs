@@ -13,7 +13,7 @@ namespace booking.libReservation
     public class libReservation : ServicedComponent
     {
         [AutoComplete]
-        public void reservation(int idClient, int idFlight, int idHotel, DateTime dateFrom, DateTime dateTo)
+        public void reservation(string idClient, int idFlight, int idHotel, DateTime dateFrom, DateTime dateTo)
         {
             var libBookFlights = new libBookFlights.libBookFlights();
             var libBookHotels = new libBookHotels.libBookHotels();

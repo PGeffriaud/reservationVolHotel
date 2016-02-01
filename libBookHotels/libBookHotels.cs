@@ -20,7 +20,7 @@ namespace booking.libBookHotels
         /// <param name="dateFrom">date de début de la réservation (limitée au jour)</param>
         /// <param name="dateTo">date de fin de la réservation (limitée au jour)</param>
         [AutoComplete]
-        public void bookHotel(int idClient, int idHotel, DateTime dateFrom, DateTime dateTo)
+        public void bookHotel(string idClient, int idHotel, DateTime dateFrom, DateTime dateTo)
         {
             SqlConnection connection = new SqlConnection();
             var host = Settings.Default["host"];

@@ -18,7 +18,7 @@ namespace booking.libBookFlights
         /// <param name="idClient">Identifiant commun du client</param>
         /// <param name="idFlight">Identifiant du vol</param>
         [AutoComplete]
-        public void bookFlight(int idClient, int idFlight)
+        public void bookFlight(string idClient, int idFlight)
         {
             SqlConnection connection = new SqlConnection();
             var host = Settings.Default["host"];

@@ -35,6 +35,7 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.EnterpriseServices" />
     <Reference Include="System.Messaging" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -79,6 +80,16 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\libReservation\libReservation.csproj">
+      <Project>{17d65e26-ce17-4232-ac05-3cc784dc38c8}</Project>
+      <Name>libReservation</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\sharedTypes\sharedTypes.csproj">
+      <Project>{bff20417-874e-47ba-8ffe-2ff9980c8c7a}</Project>
+      <Name>sharedTypes</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
