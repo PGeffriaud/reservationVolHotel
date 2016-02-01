@@ -1,3 +1,8 @@
-﻿th{
+﻿#tableFlights th, td,
+#tableHotels th, td {
     border-radius: 0px;
+}
+#tableFlights tr,
+#tableHotels tr {
+    line-height: 1px;
 }

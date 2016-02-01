@@ -5,6 +5,7 @@ using System.Messaging;
 using booking.libGetInfos;
 using booking.libGetFlights;
 using booking.libGetHotels;
+using System.Web.UI.WebControls;
 
 namespace Webapp
 {
@@ -40,6 +41,40 @@ namespace Webapp
             //mq.Close();
 
             //labelResult.Text = "Félicitations: "+txtName.Text+" -- Réservation effectuée !";
+        }
+
+        protected void tableFlights_GridViewRowEventHandler(Object sender, GridViewRowEventArgs e)
+        {
+            if (e.Row.RowType == DataControlRowType.DataRow)
+            {
+                e.Row.Attributes["onmouseover"] = "this.style.cursor='pointer';this.style.textDecoration='underline';";
+                e.Row.Attributes["onmouseout"] = "this.style.textDecoration='none';";
+                e.Row.ToolTip = "Click to select row";
+                e.Row.Attributes["onclick"] = this.Page.ClientScript.GetPostBackClientHyperlink(this.tableFlights, "Select$" + e.Row.RowIndex);
+            }
+        }
+
+        protected void tableFlights_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            string name = tableFlights.SelectedRow.Cells[0].Text;
+            labelResult.Text = "Ligne sélectionnée: " + name;
+        }
+
+        protected void tableHotels_GridViewRowEventHandler(Object sender, GridViewRowEventArgs e)
+        {
+            if (e.Row.RowType == DataControlRowType.DataRow)
+            {
+                e.Row.Attributes["onmouseover"] = "this.style.cursor='pointer';this.style.textDecoration='underline';";
+                e.Row.Attributes["onmouseout"] = "this.style.textDecoration='none';";
+                e.Row.ToolTip = "Click to select row";
+                e.Row.Attributes["onclick"] = this.Page.ClientScript.GetPostBackClientHyperlink(this.tableHotels, "Select$" + e.Row.RowIndex);
+            }
+        }
+
+        protected void tableHotels_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            string name = tableHotels.SelectedRow.Cells[0].Text;
+            labelResult.Text = "Ligne sélectionnée: " + name;
         }
     }
 }

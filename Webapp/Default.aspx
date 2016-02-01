@@ -1,24 +1,26 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Default.aspx.cs" Inherits="Webapp.Default" %>
-
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Default.aspx.cs" Inherits="Webapp.Default" EnableEventValidation="false" %>
 <!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+
     <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
     <link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
     <link type="text/css" rel="stylesheet" href="css/style.css" />
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+
     <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
     <script type="text/javascript" src="js/materialize.min.js"></script>
     <script type="text/javascript" src="js/script.js"></script>
-    <title>Reservation - EMN2016</title>
+
+    <title>Réservation - EMN2016</title>
 </head>
 <body>
     <div class="row">
     <form id="formResa" runat="server" class="col s12">
 
         <div class="row col s8 offset-s2">
-            <h2>Welcome to our booking webApp !</h2>
+            <h2>Welcome to our booking webApp !</h2> 
         </div>
            
         <div class="row col s12 card-panel teal lighten-2">
@@ -26,24 +28,28 @@
         </div>
         <div class="row">
             <div class="col s6">
-                <asp:GridView ID="tableFlights" runat="server" CssClass="center-align highlight" HeaderStyle-BackColor="#bdbdbd" AutoGenerateColumns="false">
-                    <Columns>
-                        <asp:BoundField DataField="numPlane" HeaderText="Vol Numéro"  />
+                <asp:GridView ID="tableFlights" runat="server" CssClass="center-align highlight" HeaderStyle-BackColor="#bdbdbd" OnRowDataBound="tableFlights_GridViewRowEventHandler" AutoGenerateColumns="false" OnSelectedIndexChanged="tableFlights_SelectedIndexChanged">
+                    <Columns> 
+                        <asp:BoundField DataField="numPlane" HeaderText="Numéro"  />
                         <asp:BoundField DataField="dateStart" HeaderText="Date départ"  />
                         <asp:BoundField DataField="dateEnd" HeaderText="Date arrivée"  />
                         <asp:BoundField DataField="cityFrom" HeaderText="Ville départ"  />
                         <asp:BoundField DataField="cityTo" HeaderText="Ville arrivée"  />
                     </Columns>
+                    <HeaderStyle BackColor="#BDBDBD"></HeaderStyle>
+                    <SelectedRowStyle BackColor="#BDBDBD" />
                 </asp:GridView>
             </div>
             <div class="col s6">
-                <asp:GridView ID="tableHotels" runat="server" CssClass="center-align highlight" HeaderStyle-BackColor="#bdbdbd" AutoGenerateColumns="false">
+                <asp:GridView ID="tableHotels" runat="server" CssClass="center-align highlight" HeaderStyle-BackColor="#bdbdbd" OnRowDataBound="tableHotels_GridViewRowEventHandler" AutoGenerateColumns="false" OnSelectedIndexChanged="tableHotels_SelectedIndexChanged">
                     <Columns>
                         <asp:BoundField DataField="name" HeaderText="Nom"  />
                         <asp:BoundField DataField="city" HeaderText="Ville"  />
                         <asp:BoundField DataField="adress" HeaderText="Adresse"  />
                         <asp:BoundField DataField="price" HeaderText="Prix"  />
                     </Columns>
+                    <HeaderStyle BackColor="#BDBDBD"></HeaderStyle>
+                    <SelectedRowStyle BackColor="#BDBDBD" />
                 </asp:GridView>
             </div>
         </div>

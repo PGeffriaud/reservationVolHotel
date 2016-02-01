@@ -11,7 +11,7 @@ namespace booking.libGetHotels
         public List<Hotel> getAvailableHotels()
         {
             List<Hotel> res = new List<Hotel>();
-            res.Add(new Hotel(1, "campanil", "Nantes", "20 rue de mon cul", 60));
+            res.Add(new Hotel(1, "campanil", "Nantes", "20 rue des cerisiers", 60));
             res.Add(new Hotel(1, "nom2", "Nantes", "20 rue la liberté", 75));
             res.Add(new Hotel(1, "nom3", "Nantes", "20 av Pasteur", 80));
             return res;
