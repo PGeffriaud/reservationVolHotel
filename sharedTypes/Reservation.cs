@@ -2,10 +2,8 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
-using booking.libGetFlights;
-using booking.libGetHotels;
 
-namespace Webapp
+namespace booking.Reservation
 {
     public class Reservation
     {
