@@ -24,7 +24,7 @@ namespace booking.libBookHotels
         {
             SqlConnection connection = new SqlConnection();
             var host = Settings.Default["host"];
-            connection.ConnectionString = "Data Source=" + host + "\\SQLEXPRESS;Initial Catalog=AIRFLIGHT;Integrated Security=True";
+            connection.ConnectionString = "Data Source=" + host + "\\SQLEXPRESS;Initial Catalog=BNBHOTEL;Integrated Security=True";
             connection.Open();
             SqlCommand myCmd = new SqlCommand("createBookHotel", connection);
             myCmd.CommandType = System.Data.CommandType.StoredProcedure;

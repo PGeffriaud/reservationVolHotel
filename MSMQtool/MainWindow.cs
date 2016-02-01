@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Messaging;
-using booking.Reservation;
+using booking.commonTypes;
 using booking.libReservation;
 
 namespace MSMQtool
