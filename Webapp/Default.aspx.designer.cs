@@ -67,6 +67,33 @@ namespace Webapp {
         protected global::System.Web.UI.WebControls.TextBox txtTel;
         
         /// <summary>
+        /// Contrôle dateFrom.
+        /// </summary>
+        /// <remarks>
+        /// Champ généré automatiquement.
+        /// Pour modifier, déplacez la déclaration de champ du fichier de concepteur dans le fichier code-behind.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox dateFrom;
+        
+        /// <summary>
+        /// Contrôle dateTo.
+        /// </summary>
+        /// <remarks>
+        /// Champ généré automatiquement.
+        /// Pour modifier, déplacez la déclaration de champ du fichier de concepteur dans le fichier code-behind.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox dateTo;
+        
+        /// <summary>
+        /// Contrôle txtNumCompte.
+        /// </summary>
+        /// <remarks>
+        /// Champ généré automatiquement.
+        /// Pour modifier, déplacez la déclaration de champ du fichier de concepteur dans le fichier code-behind.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtNumCompte;
+        
+        /// <summary>
         /// Contrôle btnSubmit.
         /// </summary>
         /// <remarks>

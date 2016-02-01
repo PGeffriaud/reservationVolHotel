@@ -9,7 +9,7 @@
     <link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
     <link type="text/css" rel="stylesheet" href="css/style.css" />
 
-    <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+    <script type="text/javascript" src="js/jquery-2.2.0.min.js"></script>
     <script type="text/javascript" src="js/materialize.min.js"></script>
     <script type="text/javascript" src="js/script.js"></script>
 
@@ -23,14 +23,15 @@
             <h2>Welcome to our booking webApp !</h2> 
         </div>
            
+        <!-- Liste des vols et hotels disponibles -->
         <div class="row col s12 card-panel teal lighten-2">
             <asp:Label ID="labelResult" runat="server" Text=""></asp:Label>
         </div>
         <div class="row">
             <div class="col s6">
-                <asp:GridView ID="tableFlights" runat="server" CssClass="center-align highlight" HeaderStyle-BackColor="#bdbdbd" OnRowDataBound="tableFlights_GridViewRowEventHandler" AutoGenerateColumns="false" OnSelectedIndexChanged="tableFlights_SelectedIndexChanged">
+                <asp:GridView ID="tableFlights" runat="server" CssClass="center-align highlight" HeaderStyle-BackColor="#bdbdbd" OnRowDataBound="tableFlights_GridViewRowEventHandler" AutoGenerateColumns="false" >
                     <Columns> 
-                        <asp:BoundField DataField="id" HeaderText="Id"  />
+                        <asp:BoundField DataField="id" HeaderText="Id" Visible="false"/>
                         <asp:BoundField DataField="numPlane" HeaderText="Numéro"  />
                         <asp:BoundField DataField="dateStart" HeaderText="Date départ"  />
                         <asp:BoundField DataField="dateEnd" HeaderText="Date arrivée"  />
@@ -42,9 +43,9 @@
                 </asp:GridView>
             </div>
             <div class="col s6">
-                <asp:GridView ID="tableHotels" runat="server" CssClass="center-align highlight" HeaderStyle-BackColor="#bdbdbd" OnRowDataBound="tableHotels_GridViewRowEventHandler" AutoGenerateColumns="false" OnSelectedIndexChanged="tableHotels_SelectedIndexChanged">
+                <asp:GridView ID="tableHotels" runat="server" CssClass="center-align highlight" HeaderStyle-BackColor="#bdbdbd" OnRowDataBound="tableHotels_GridViewRowEventHandler" AutoGenerateColumns="false" >
                     <Columns>
-                        <asp:BoundField DataField="id" HeaderText="Id"  />
+                        <asp:BoundField DataField="id" HeaderText="Id" Visible="false"/>
                         <asp:BoundField DataField="name" HeaderText="Nom"  />
                         <asp:BoundField DataField="city" HeaderText="Ville"  />
                         <asp:BoundField DataField="adress" HeaderText="Adresse"  />
@@ -59,22 +60,42 @@
              <button data-target="modalCoord" class="btn modal-trigger">Réserver</button>
         </div>
         
+        <!-- Page modal : fomulaire de réservation -->
         <div id="modalCoord" class="modal">
-        <div class="row modal-content">
+        <div class="modal-content">
             <h4>Informations personnelles</h4>
-            <div class="input-field col s6">
-                <i class="material-icons prefix">account_circle</i>
-                <asp:TextBox ID="txtName" runat="server"></asp:TextBox>
-                <label for="txtName">Name</label>
+            <div class="row">
+                <div class="input-field col s6">
+                    <i class="material-icons prefix">account_circle</i>
+                    <asp:TextBox ID="txtName" runat="server"></asp:TextBox>
+                    <label for="txtName">Name</label>
+                </div>
+                <div class="input-field col s6">
+                    <i class="material-icons prefix">phone</i>
+                    <asp:TextBox ID="txtTel" runat="server"></asp:TextBox>
+                    <label for="txtTel">Telephone</label>
+                </div>
             </div>
-            <div class="input-field col s6">
-                <i class="material-icons prefix">phone</i>
-                <asp:TextBox ID="txtTel" runat="server"></asp:TextBox>
-                <label for="txtTel">Telephone</label>
+            <div class="row">
+                <div class="input-field col s6">
+                    <i class="material-icons prefix">schedule</i>
+                    <asp:TextBox ID="dateFrom" runat="server" CssClass="datepicker" ></asp:TextBox>
+                    <label for="dateFrom">Début réservation</label>
+                </div>
+                <div class="input-field col s6">
+                    <i class="material-icons prefix">schedule</i>
+                    <asp:TextBox ID="dateTo" runat="server" CssClass="datepicker" ></asp:TextBox>
+                    <label for="dateFrom">Fin  réservation</label>
+                </div>
             </div>
-        </div>
+            <div class="row input-field col s12">
+                <i class="material-icons prefix">vpn_key</i>
+                <asp:TextBox ID="txtNumCompte" runat="server"></asp:TextBox>
+                <label for="txtIban">Numéro carte bleue</label>
+            </div>
         <div class="modal-footer">
             <asp:LinkButton ID="btnSubmit" runat="server" CssClass="btn waves-effect waves-light" OnClick="btnSubmit_Click">Submit<i class="material-icons right">send</i></asp:LinkButton>
+        </div>
         </div>
         </div>
           
