@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using booking.libGetFlights;
 using booking.libGetHotels;
+using booking.commonTypes;
 
 namespace booking.libGetInfos
 {

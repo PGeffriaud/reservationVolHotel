@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace booking.libGetFlights
+namespace booking.commonTypes
 {
     public class Flight
     {

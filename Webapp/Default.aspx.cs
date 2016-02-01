@@ -2,11 +2,9 @@
 using System.Data;
 using System.Collections.Generic;
 using System.Messaging;
-using booking.libGetInfos;
-using booking.libGetFlights;
-using booking.libGetHotels;
 using System.Web.UI.WebControls;
-using booking.Reservation;
+using booking.libGetInfos;
+using booking.commonTypes;
 
 namespace Webapp
 {

@@ -79,7 +79,7 @@
             <div class="row">
                 <div class="input-field col s6">
                     <i class="material-icons prefix">schedule</i>
-                    <asp:TextBox ID="dateFrom" runat="server" CssClass="datepicker" ></asp:TextBox>
+                    <asp:TextBox ID="dateFrom" runat="server" CssClass="datepicker"></asp:TextBox>
                     <label for="dateFrom">Début réservation</label>
                 </div>
                 <div class="input-field col s6">

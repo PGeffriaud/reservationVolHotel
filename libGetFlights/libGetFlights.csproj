@@ -46,12 +46,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Flight.cs" />
     <Compile Include="libGetFlights.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="keyLibGetFlights.snk" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\sharedTypes\sharedTypes.csproj">
+      <Project>{bff20417-874e-47ba-8ffe-2ff9980c8c7a}</Project>
+      <Name>sharedTypes</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
