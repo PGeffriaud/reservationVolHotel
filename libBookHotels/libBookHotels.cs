@@ -10,7 +10,7 @@ using libBookHotels.Properties;
 namespace booking.libBookHotels
 {
     [Transaction(TransactionOption.Required), ObjectPooling(5, 10), Description("Booking EMN")]
-    public class libBookHotels
+    public class libBookHotels : ServicedComponent
     {
         /// <summary>
         /// Ajoute une réservation d'un hotel
