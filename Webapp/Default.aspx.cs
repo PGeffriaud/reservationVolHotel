@@ -2,11 +2,9 @@
 using System.Data;
 using System.Collections.Generic;
 using System.Messaging;
-using booking.libGetInfos;
-using booking.libGetFlights;
-using booking.libGetHotels;
 using System.Web.UI.WebControls;
-using booking.Reservation;
+using booking.libGetInfos;
+using booking.commonTypes;
 
 namespace Webapp
 {
@@ -58,9 +56,7 @@ namespace Webapp
         {
             if (e.Row.RowType == DataControlRowType.DataRow)
             {
-                e.Row.Attributes["onmouseover"] = "this.style.cursor='pointer';this.style.textDecoration='underline';";
-                e.Row.Attributes["onmouseout"] = "this.style.textDecoration='none';";
-                e.Row.ToolTip = "Click to select row";
+                e.Row.Attributes["onmouseover"] = "this.style.cursor='pointer';";
                 e.Row.Attributes["onclick"] = this.Page.ClientScript.GetPostBackClientHyperlink(this.tableFlights, "Select$" + e.Row.RowIndex);
             }
         }
@@ -69,10 +65,7 @@ namespace Webapp
         {
             if (e.Row.RowType == DataControlRowType.DataRow)
             {
-                //e.Row.Attributes["onmouseover"] = "this.style.cursor='pointer';this.style.textDecoration='underline';";
                 e.Row.Attributes["onmouseover"] = "this.style.cursor='pointer';";
-                //e.Row.Attributes["onmouseout"] = "this.style.textDecoration='none';";
-                //e.Row.ToolTip = "Click to select row";
                 e.Row.Attributes["onclick"] = this.Page.ClientScript.GetPostBackClientHyperlink(this.tableHotels, "Select$" + e.Row.RowIndex);
             }
         }

@@ -29,7 +29,7 @@
         </div>
         <div class="row">
             <div class="col s6">
-                <asp:GridView ID="tableFlights" runat="server" CssClass="center-align highlight" HeaderStyle-BackColor="#bdbdbd" OnRowDataBound="tableFlights_GridViewRowEventHandler" AutoGenerateColumns="false" >
+                <asp:GridView ID="tableFlights" runat="server" CssClass="center-align highlight bordered" OnRowDataBound="tableFlights_GridViewRowEventHandler" AutoGenerateColumns="false" >
                     <Columns> 
                         <asp:BoundField DataField="id" HeaderText="Id" Visible="false"/>
                         <asp:BoundField DataField="numPlane" HeaderText="Numéro"  />
@@ -38,12 +38,12 @@
                         <asp:BoundField DataField="cityFrom" HeaderText="Ville départ"  />
                         <asp:BoundField DataField="cityTo" HeaderText="Ville arrivée"  />
                     </Columns>
-                    <HeaderStyle BackColor="#BDBDBD"></HeaderStyle>
-                    <SelectedRowStyle BackColor="#BDBDBD" />
+                    <HeaderStyle BackColor="#eeeeee" />
+                    <SelectedRowStyle BackColor="#4db6ac" />
                 </asp:GridView>
             </div>
             <div class="col s6">
-                <asp:GridView ID="tableHotels" runat="server" CssClass="center-align highlight" HeaderStyle-BackColor="#bdbdbd" OnRowDataBound="tableHotels_GridViewRowEventHandler" AutoGenerateColumns="false" >
+                <asp:GridView ID="tableHotels" runat="server" CssClass="center-align highlight bordered" OnRowDataBound="tableHotels_GridViewRowEventHandler" AutoGenerateColumns="false" >
                     <Columns>
                         <asp:BoundField DataField="id" HeaderText="Id" Visible="false"/>
                         <asp:BoundField DataField="name" HeaderText="Nom"  />
@@ -51,8 +51,8 @@
                         <asp:BoundField DataField="adress" HeaderText="Adresse"  />
                         <asp:BoundField DataField="price" HeaderText="Prix"  />
                     </Columns>
-                    <HeaderStyle BackColor="#BDBDBD"></HeaderStyle>
-                    <SelectedRowStyle BackColor="#BDBDBD" />
+                    <HeaderStyle BackColor="#eeeeee"></HeaderStyle>
+                    <SelectedRowStyle BackColor="#4db6ac" />
                 </asp:GridView>
             </div>
         </div>
@@ -79,7 +79,7 @@
             <div class="row">
                 <div class="input-field col s6">
                     <i class="material-icons prefix">schedule</i>
-                    <asp:TextBox ID="dateFrom" runat="server" CssClass="datepicker" ></asp:TextBox>
+                    <asp:TextBox ID="dateFrom" runat="server" CssClass="datepicker"></asp:TextBox>
                     <label for="dateFrom">Début réservation</label>
                 </div>
                 <div class="input-field col s6">

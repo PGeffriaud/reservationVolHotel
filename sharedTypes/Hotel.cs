@@ -1,4 +1,6 @@
-﻿namespace booking.libGetHotels
+﻿using System;
+
+namespace booking.commonTypes
 {
     public class Hotel
     {
