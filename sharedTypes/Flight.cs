@@ -12,12 +12,13 @@ namespace booking.commonTypes
         public string cityTo { get; set; }
         public string cityFromCode { get; set; }
         public string cityToCode { get; set; }
+        public double price { get; set; }
 
         public Flight()
         {
         }
 
-        public Flight(int id, string numPlane, DateTime dateStart, DateTime dateEnd, string cityFrom, string cityTo, string cityFromCode, string cityToCode)
+        public Flight(int id, string numPlane, DateTime dateStart, DateTime dateEnd, string cityFrom, string cityTo, string cityFromCode, string cityToCode, double price)
         {
             this.id = id;
             this.numPlane = numPlane;
@@ -27,6 +28,7 @@ namespace booking.commonTypes
             this.cityTo = cityTo;
             this.cityFromCode = cityFromCode;
             this.cityToCode = cityToCode;
+            this.price = price;
         }
     }
 }

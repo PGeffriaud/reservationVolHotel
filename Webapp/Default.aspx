@@ -31,12 +31,13 @@
             <div class="col s6">
                 <asp:GridView ID="tableFlights" runat="server" CssClass="center-align highlight bordered" OnRowDataBound="tableFlights_GridViewRowEventHandler" AutoGenerateColumns="false" >
                     <Columns> 
-                        <asp:BoundField DataField="id" HeaderText="Id" Visible="false"/>
-                        <asp:BoundField DataField="numPlane" HeaderText="Numéro"  />
-                        <asp:BoundField DataField="dateStart" HeaderText="Date départ"  />
-                        <asp:BoundField DataField="dateEnd" HeaderText="Date arrivée"  />
-                        <asp:BoundField DataField="cityFrom" HeaderText="Ville départ"  />
-                        <asp:BoundField DataField="cityTo" HeaderText="Ville arrivée"  />
+                        <asp:BoundField DataField="id" HeaderText="Id" Visible="false" />
+                        <asp:BoundField DataField="numPlane" HeaderText="Numéro" />
+                        <asp:BoundField DataField="dateStart" HeaderText="Départ" DataFormatString="{0:d}" />
+                        <asp:BoundField DataField="dateEnd" HeaderText="Arrivée" DataFormatString="{0:d}" />
+                        <asp:BoundField DataField="cityFrom" HeaderText="Ville départ" />
+                        <asp:BoundField DataField="cityTo" HeaderText="Ville arrivée" />
+                        <asp:BoundField DataField="price" HeaderText="Prix" DataFormatString="{0:C}" />
                     </Columns>
                     <HeaderStyle BackColor="#eeeeee" />
                     <SelectedRowStyle BackColor="#4db6ac" />
@@ -46,10 +47,10 @@
                 <asp:GridView ID="tableHotels" runat="server" CssClass="center-align highlight bordered" OnRowDataBound="tableHotels_GridViewRowEventHandler" AutoGenerateColumns="false" >
                     <Columns>
                         <asp:BoundField DataField="id" HeaderText="Id" Visible="false"/>
-                        <asp:BoundField DataField="name" HeaderText="Nom"  />
-                        <asp:BoundField DataField="city" HeaderText="Ville"  />
+                        <asp:BoundField DataField="name" HeaderText="Nom" />
+                        <asp:BoundField DataField="city" HeaderText="Ville" />
                         <asp:BoundField DataField="adress" HeaderText="Adresse"  />
-                        <asp:BoundField DataField="price" HeaderText="Prix"  />
+                        <asp:BoundField DataField="price" HeaderText="Prix" DataFormatString="{0:C}" />
                     </Columns>
                     <HeaderStyle BackColor="#eeeeee"></HeaderStyle>
                     <SelectedRowStyle BackColor="#4db6ac" />
