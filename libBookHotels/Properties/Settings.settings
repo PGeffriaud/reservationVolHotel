@@ -3,7 +3,7 @@
   <Profiles />
   <Settings>
     <Setting Name="host" Type="System.String" Scope="Application">
-      <Value Profile="(Default)">YANNDOTNET-PC</Value>
+      <Value Profile="(Default)">PIERREG-PC</Value>
     </Setting>
   </Settings>
 </SettingsFile>

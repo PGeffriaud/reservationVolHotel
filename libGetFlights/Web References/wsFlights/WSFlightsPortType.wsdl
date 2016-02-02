@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<definitions xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://soap/" targetNamespace="http://soap/" xmlns="http://schemas.xmlsoap.org/wsdl/">
+  <types>
+    <xsd:schema>
+      <xsd:import schemaLocation="WSFlightsPortType_schema1.xsd" namespace="http://soap/" />
+    </xsd:schema>
+  </types>
+  <message name="getFlights">
+    <part name="parameters" element="tns:getFlights" />
+  </message>
+  <message name="getFlightsResponse">
+    <part name="parameters" element="tns:getFlightsResponse" />
+  </message>
+  <portType name="WSFlights">
+    <operation name="getFlights">
+      <input xmlns:ns1="http://www.w3.org/2007/05/addressing/metadata" ns1:Action="http://soap/WSFlights/getFlightsRequest" message="tns:getFlights" />
+      <output xmlns:ns2="http://www.w3.org/2007/05/addressing/metadata" ns2:Action="http://soap/WSFlights/getFlightsResponse" message="tns:getFlightsResponse" />
+    </operation>
+  </portType>
+</definitions>

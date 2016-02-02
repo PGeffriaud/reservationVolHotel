@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace libBookHotels.Properties {
+namespace libGetFlights.Properties {
     
     
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
@@ -25,10 +25,11 @@ namespace libBookHotels.Properties {
         
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("PIERREG-PC")]
-        public string host {
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.WebServiceUrl)]
+        [global::System.Configuration.DefaultSettingValueAttribute("http://cocaud.com:9000/WSFlights")]
+        public string libGetFlights_com_cocaud_WSFlights {
             get {
-                return ((string)(this["host"]));
+                return ((string)(this["libGetFlights_com_cocaud_WSFlights"]));
             }
         }
     }

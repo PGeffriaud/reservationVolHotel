@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using booking.commonTypes;
+using libGetFlights.wsFlights;
 
 namespace booking.libGetFlights
 {
@@ -11,11 +12,28 @@ namespace booking.libGetFlights
     {
         public List<Flight> getAvailableFlights()
         {
-            List<Flight> res = new List<Flight>();
-            res.Add(new Flight(1, "FL001", new DateTime(2016, 1, 1), new DateTime(2016, 1, 5), "Nantes", "Paris", "NAN", "CDG", 352.20));
-            res.Add(new Flight(2, "FL002", new DateTime(2016, 1, 5), new DateTime(2016, 1, 6), "Paris", "Nantes", "CDG", "NAN", 10.0));
-            res.Add(new Flight(3, "FL003", new DateTime(2016, 1, 8), new DateTime(2016, 1, 10), "Nantes", "Marseille", "NAN", "MAR", 65.32));
-            return res;
+            WSFlights ws = new WSFlights();
+
+            flight[] tabFlight = ws.getFlights();
+            List<Flight> resList = new List<Flight>();
+
+            for(int i=0; i<tabFlight.Length; i++)
+            {
+                flight flight = tabFlight[i];
+                Flight f = new Flight();
+                f.id = flight.id;
+                f.numPlane = flight.numPlane;
+                f.dateStart = flight.dateStart;
+                f.dateEnd = flight.dateEnd;
+                f.cityFrom = flight.cityFrom;
+                f.cityTo = flight.cityTo;
+                f.cityFromCode = flight.cityFromCode;
+                f.cityToCode = flight.cityToCode;
+                f.price = flight.price;
+                resList.Add(f);
+
+            }
+            return resList;
         }
     }
 }
