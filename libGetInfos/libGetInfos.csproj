@@ -32,6 +32,12 @@
     <WarningLevel>4</WarningLevel>
     <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>true</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>keyLibGetInfos.snk</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -57,6 +63,9 @@
       <Project>{bff20417-874e-47ba-8ffe-2ff9980c8c7a}</Project>
       <Name>sharedTypes</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="keyLibGetInfos.snk" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

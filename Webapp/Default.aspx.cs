@@ -57,7 +57,7 @@ namespace Webapp
             if (e.Row.RowType == DataControlRowType.DataRow)
             {
                 e.Row.Attributes["onmouseover"] = "this.style.cursor='pointer';";
-                e.Row.Attributes["onclick"] = this.Page.ClientScript.GetPostBackClientHyperlink(this.tableFlights, "Select$" + e.Row.RowIndex);
+                e.Row.Attributes["onclick"] = this.Page.ClientScript.GetPostBackClientHyperlink(tableFlights, "Select$" + e.Row.RowIndex);
             }
         }
 
@@ -66,9 +66,28 @@ namespace Webapp
             if (e.Row.RowType == DataControlRowType.DataRow)
             {
                 e.Row.Attributes["onmouseover"] = "this.style.cursor='pointer';";
-                e.Row.Attributes["onclick"] = this.Page.ClientScript.GetPostBackClientHyperlink(this.tableHotels, "Select$" + e.Row.RowIndex);
+                e.Row.Attributes["onclick"] = this.Page.ClientScript.GetPostBackClientHyperlink(tableHotels, "Select$" + e.Row.RowIndex);
             }
         }
 
+        protected void tableFlights_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            int index = tableFlights.SelectedIndex;
+            if(index >= 0)
+            {
+                Flight selectedFlight = flights[tableFlights.SelectedIndex];
+                string selectedCity = selectedFlight.cityTo;
+
+                libGetInfos libInfos = new libGetInfos();
+                hotels = libInfos.getListHotelsOfCity(selectedCity);
+                tableHotels.DataSource = hotels;
+                tableHotels.DataBind();
+            }
+        }
+
+        protected void tableHotels_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            tableFlights_SelectedIndexChanged(sender, e);
+        }
     }
 }

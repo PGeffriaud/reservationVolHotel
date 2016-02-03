@@ -8,13 +8,13 @@ namespace booking.commonTypes
         public string name { get; set; }
         public string city { get; set; }
         public string adress { get; set; }
-        public int price { get; set; }
+        public double price { get; set; }
 
         public Hotel()
         {
         }
 
-        public Hotel(int id, string name, string city, string adress, int price)
+        public Hotel(int id, string name, string city, string adress, double price)
         {
             this.id = id;
             this.name = name;

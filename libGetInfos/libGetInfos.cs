@@ -21,5 +21,11 @@ namespace booking.libGetInfos
             libGetHotels.libGetHotels libHotels = new libGetHotels.libGetHotels();
             return libHotels.getAvailableHotels();
         }
+
+        public List<Hotel> getListHotelsOfCity(string city)
+        {
+            libGetHotels.libGetHotels libHotels = new libGetHotels.libGetHotels();
+            return libHotels.getAvailableHotelsOfCity(city);
+        }
     }
 }

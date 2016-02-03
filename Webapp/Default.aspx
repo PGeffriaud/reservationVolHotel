@@ -29,7 +29,7 @@
         </div>
         <div class="row">
             <div class="col s6">
-                <asp:GridView ID="tableFlights" runat="server" CssClass="center-align highlight bordered" OnRowDataBound="tableFlights_GridViewRowEventHandler" AutoGenerateColumns="false" >
+                <asp:GridView ID="tableFlights" runat="server" CssClass="center-align highlight bordered" OnRowDataBound="tableFlights_GridViewRowEventHandler" AutoGenerateColumns="false" OnSelectedIndexChanged="tableFlights_SelectedIndexChanged" >
                     <Columns> 
                         <asp:BoundField DataField="id" HeaderText="Id" Visible="false" />
                         <asp:BoundField DataField="numPlane" HeaderText="Numéro" />
@@ -44,7 +44,7 @@
                 </asp:GridView>
             </div>
             <div class="col s6">
-                <asp:GridView ID="tableHotels" runat="server" CssClass="center-align highlight bordered" OnRowDataBound="tableHotels_GridViewRowEventHandler" AutoGenerateColumns="false" >
+                <asp:GridView ID="tableHotels" runat="server" CssClass="center-align highlight bordered" OnRowDataBound="tableHotels_GridViewRowEventHandler" AutoGenerateColumns="false" OnSelectedIndexChanged="tableHotels_SelectedIndexChanged" >
                     <Columns>
                         <asp:BoundField DataField="id" HeaderText="Id" Visible="false"/>
                         <asp:BoundField DataField="name" HeaderText="Nom" />

@@ -4,6 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using booking.commonTypes;
+using System.Net;
+using System.IO;
+using Newtonsoft.Json;
+using libGetHotels.Properties;
 
 namespace booking.libGetHotels
 {
@@ -11,11 +15,34 @@ namespace booking.libGetHotels
     {
         public List<Hotel> getAvailableHotels()
         {
-            List<Hotel> res = new List<Hotel>();
-            res.Add(new Hotel(1, "campanil", "Nantes", "20 rue des cerisiers", 60));
-            res.Add(new Hotel(1, "nom2", "Nantes", "20 rue la liberté", 75));
-            res.Add(new Hotel(1, "nom3", "Nantes", "20 av Pasteur", 80));
-            return res;
+            var truc = Settings.Default["URL_WSHOTELS"];
+            HttpWebRequest request = (HttpWebRequest)WebRequest.Create(truc+"getHotels");
+            HttpWebResponse response = request.GetResponse() as HttpWebResponse;
+
+            Stream stream = response.GetResponseStream();
+            StreamReader reader = new StreamReader(stream);
+
+            string jsonResult = reader.ReadToEnd();
+
+            List<Hotel> listHotels = JsonConvert.DeserializeObject<List<Hotel>>(jsonResult);
+
+            return listHotels;
+        }
+
+        public List<Hotel> getAvailableHotelsOfCity(string city)
+        {
+            var truc = Settings.Default["URL_WSHOTELS"];
+            HttpWebRequest request = (HttpWebRequest)WebRequest.Create(truc + "getHotels/" + city);
+            HttpWebResponse response = request.GetResponse() as HttpWebResponse;
+
+            Stream stream = response.GetResponseStream();
+            StreamReader reader = new StreamReader(stream);
+
+            string jsonResult = reader.ReadToEnd();
+
+            List<Hotel> listHotels = JsonConvert.DeserializeObject<List<Hotel>>(jsonResult);
+
+            return listHotels;
         }
     }
 }
