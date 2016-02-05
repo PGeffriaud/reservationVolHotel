@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using System.Messaging;
 using booking.commonTypes;
 using booking.libReservation;
+using System.Data.SqlClient;
 
 namespace MSMQtool
 {
@@ -59,7 +60,7 @@ namespace MSMQtool
             clearAllMessagesFromQueue();
         }
 
-        private static void clearAllMessagesFromQueue()
+        private void clearAllMessagesFromQueue()
         {
             MessageQueue mq = getMessageQueue();
             System.Messaging.Message[] allMess = mq.GetAllMessages();
@@ -68,6 +69,7 @@ namespace MSMQtool
                 mq.ReceiveById(item.Id);
             }
             mq.Close();
+            getAllMessagesFromQueue();
         }
 
         private void buttonReceiveAll_Click(object sender, EventArgs e)
@@ -78,10 +80,18 @@ namespace MSMQtool
             foreach (var item in allMess)
             {
                 Reservation res = (Reservation)item.Body;
-                libReservation.reservation(res.idClient, res.idFlight, res.idHotel, res.hotelDateFrom, res.hotelDateTo);
-                mq.ReceiveById(item.Id);
+
+                try {
+                    libReservation.reservation(res.idClient, res.idFlight, res.idHotel, res.hotelDateFrom, res.hotelDateTo);
+                    labelInfo.Text = "Reception OK";
+                    mq.ReceiveById(item.Id);
+                } catch (SqlException exc) {
+                    labelInfo.Text = exc.Message;
+                    Console.WriteLine("Erreur SQL : " + exc.Message);
+                }
             }
             mq.Close();
+            getAllMessagesFromQueue();
         }
 
         private void buttonReceiveOne_Click(object sender, EventArgs e)
@@ -90,9 +100,18 @@ namespace MSMQtool
 
             System.Messaging.Message mess = mq.Peek();
             Reservation res = (Reservation)mess.Body;
-            libReservation.reservation(res.idClient, res.idFlight, res.idHotel, res.hotelDateFrom, res.hotelDateTo);
-            mq.Receive();
+
+            try {
+                libReservation.reservation(res.idClient, res.idFlight, res.idHotel, res.hotelDateFrom, res.hotelDateTo);
+                labelInfo.Text = "Reception OK";
+                mq.Receive();
+            } catch (SqlException exc) {
+                labelInfo.Text = exc.Message;
+                Console.WriteLine("Erreur SQL : " + exc.Message);
+            }
+
             mq.Close();
+            getAllMessagesFromQueue();
         }
     }
 }

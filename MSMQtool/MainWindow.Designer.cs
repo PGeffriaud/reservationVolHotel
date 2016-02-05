@@ -32,6 +32,8 @@
             this.buttonReceiveAll = new System.Windows.Forms.Button();
             this.itemsList = new System.Windows.Forms.ListBox();
             this.buttonClearAll = new System.Windows.Forms.Button();
+            this.refreshList = new System.Windows.Forms.Button();
+            this.labelInfo = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // buttonReceiveOne
@@ -72,11 +74,33 @@
             this.buttonClearAll.UseVisualStyleBackColor = true;
             this.buttonClearAll.Click += new System.EventHandler(this.buttonClearAll_Click);
             // 
+            // refreshList
+            // 
+            this.refreshList.Location = new System.Drawing.Point(267, 227);
+            this.refreshList.Name = "refreshList";
+            this.refreshList.Size = new System.Drawing.Size(79, 23);
+            this.refreshList.TabIndex = 4;
+            this.refreshList.Text = "Refresh List";
+            this.refreshList.UseVisualStyleBackColor = true;
+            // 
+            // labelInfo
+            // 
+            this.labelInfo.AutoSize = true;
+            this.labelInfo.ForeColor = System.Drawing.Color.Red;
+            this.labelInfo.Location = new System.Drawing.Point(352, 232);
+            this.labelInfo.MaximumSize = new System.Drawing.Size(350, 0);
+            this.labelInfo.MinimumSize = new System.Drawing.Size(100, 0);
+            this.labelInfo.Name = "labelInfo";
+            this.labelInfo.Size = new System.Drawing.Size(100, 13);
+            this.labelInfo.TabIndex = 5;
+            // 
             // MainWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(686, 262);
+            this.Controls.Add(this.labelInfo);
+            this.Controls.Add(this.refreshList);
             this.Controls.Add(this.buttonClearAll);
             this.Controls.Add(this.itemsList);
             this.Controls.Add(this.buttonReceiveAll);
@@ -85,6 +109,7 @@
             this.Text = "MSMQtool";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -94,6 +119,8 @@
         private System.Windows.Forms.Button buttonReceiveAll;
         private System.Windows.Forms.ListBox itemsList;
         private System.Windows.Forms.Button buttonClearAll;
+        private System.Windows.Forms.Button refreshList;
+        private System.Windows.Forms.Label labelInfo;
     }
 }
 
