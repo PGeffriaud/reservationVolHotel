@@ -21,8 +21,10 @@ namespace booking.libBookFlights
         public void bookFlight(string idClient, int idFlight)
         {
             SqlConnection connection = new SqlConnection();
-            var host = Settings.Default["host"];
-            connection.ConnectionString = "Data Source=" + host + "\\SQLEXPRESS;Initial Catalog=AIRFLIGHT;Integrated Security=True";
+            // Data Source=PIERREG-PC,1433;Initial Catalog=AIRFLIGHT;Persist Security Info=True;User ID=dbemn;Password=***********
+            // Data Source=PIERREG-PC,1433;Initial Catalog=AIRFLIGHT;Integrated Security=True
+            var connectionString = Settings.Default["connectionString"];
+            connection.ConnectionString = "" + connectionString;
             connection.Open();
             SqlCommand myCmd = new SqlCommand("createBookFlight", connection);
             myCmd.CommandType = System.Data.CommandType.StoredProcedure;

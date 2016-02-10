@@ -2,8 +2,8 @@
 <SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="libBookHotels.Properties" GeneratedClassName="Settings">
   <Profiles />
   <Settings>
-    <Setting Name="host" Type="System.String" Scope="Application">
-      <Value Profile="(Default)">PIERREG-PC</Value>
+    <Setting Name="connectionString" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">Data Source=PIERREG-PC,1433;Initial Catalog=BNBHOTEL;Persist Security Info=True;User ID=dbemn;Password=achanger</Value>
     </Setting>
   </Settings>
 </SettingsFile>

@@ -82,6 +82,7 @@
             this.refreshList.TabIndex = 4;
             this.refreshList.Text = "Refresh List";
             this.refreshList.UseVisualStyleBackColor = true;
+            this.refreshList.Click += new System.EventHandler(this.refreshList_Click);
             // 
             // labelInfo
             // 

@@ -113,5 +113,10 @@ namespace MSMQtool
             mq.Close();
             getAllMessagesFromQueue();
         }
+
+        private void refreshList_Click(object sender, EventArgs e)
+        {
+            getAllMessagesFromQueue();
+        }
     }
 }

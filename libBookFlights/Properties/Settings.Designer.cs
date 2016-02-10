@@ -25,10 +25,11 @@ namespace libBookFlights.Properties {
         
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("PIERREG-PC")]
-        public string host {
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=PIERREG-PC,1433;Initial Catalog=AIRFLIGHT;Persist Security Info=True;" +
+            "User ID=dbemn;Password=achanger")]
+        public string connectionString {
             get {
-                return ((string)(this["host"]));
+                return ((string)(this["connectionString"]));
             }
         }
     }
